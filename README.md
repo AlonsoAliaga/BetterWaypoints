@@ -1,6 +1,6 @@
 ![Logo](https://i.imgur.com/P5SEJSE.png)
 
-# BetterBalls
+# BetterWaypoints
 This plugin adds 2 "new item" to the game that should be useful for every player.\
 The aim of this plugin is to allow players to save their waypoints easily.
 
