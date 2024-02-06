@@ -1,0 +1,210 @@
+#Default configuration for version 0.4-BETA
+#           ___      _   _         __      __                   _     _                   Our plugins: https://alonsoaliaga.com/plugins
+#          | _ ) ___| |_| |_ ___ _ \ \    / /_ _ _  _ _ __  ___(_)_ _| |_ ___             Support server: https://alonsoaliaga.com/discord
+#          | _ \/ -_)  _|  _/ -_) '_\ \/\/ / _` | || | '_ \/ _ \ | ' \  _(_-<             Youtube: https://alonsoaliaga.com/play
+#          |___/\___|\__|\__\___|_|  \_/\_/\__,_|\_, | .__/\___/_|_||_\__/__/             Test server: plugins.alonsoaliaga.com
+#                                by AlonsoAliaga |__/|_|                                  Twitch: https://alonsoaliaga.com/twitch
+#                  Considering donating? https://alonsoaliaga.com/donate                  Thanks for using my plugin! <3
+Waypoints-paper:
+  Recipe:
+    Enabled: true
+    Ingredients:
+      E: "ENDER_PEARL"
+      P: "PAPER"
+    Shape:
+    - "EEE"
+    - "EPE"
+    - "EEE"
+    Amount: 2
+  New-displayname: "&b&lWaypoint paper"
+  New-lore:
+    - "&eRight-click to save waypoint."
+  #Using 1.14+? Want to add custom texture?
+  #Use this to add custom model data so you can use it later in the resource pack.
+  #If you don't plan to use a texture pack, set it to 0.
+  New-custom-model-data: 0
+  #Data for paper with waypoint saved.
+  Used-displayname: "&4&lWaypoint paper"
+  Used-lore:
+    - "&7Saved waypoint."
+  #Using 1.14+? Want to add custom texture?
+  #Use this to add custom model data so you can use it later in the resource pack.
+  #If you don't plan to use a texture pack, set it to 0.
+  Used-custom-model-data: 0
+  #Display recipe with command?
+  Display: true
+  Glow:
+    #This option adds enchantment on craft.
+    On-craft: false
+    #This option adds enchantment on waypoint save.
+    On-save: true
+
+Waypoints-book:
+  Recipe:
+    Enabled: true
+    Ingredients:
+      D: "DIAMOND"
+      E: "ENDER_PEARL"
+      B: "BOOK"
+    Shape:
+      - "DED"
+      - "EBE"
+      - "DED"
+  Displayname: "&3&lWaypoints Book"
+  New-lore:
+    - "&7Brand new book!"
+    - ""
+    - "&eRight-click to open."
+    - "&eShift + right-click to edit."
+  Used-lore:
+    - "&7Pages: {PAGES}/{MAXPAGES}"
+    - ""
+    - "&eRight-click to open."
+    - "&eShift + right-click to edit."
+  #Using 1.14+? Want to add custom texture?
+  #Use this to add custom model data so you can use it later in the resource pack.
+  #If you don't plan to use a texture pack, set it to 0.
+  Custom-model-data: 0
+  #Display recipe with command?
+  Display: true
+  #Adds enchantment and hide flags.
+  Glow: true
+  #From 1 to 6 (Default size for crafted/given waypoints books)
+  Rows: 3
+
+#Permissions. Set to "none" if permission is not required.
+Permissions:
+  #Permission required to be able to craft items.
+  Craft:
+    Paper: "none" # Example: "betterwaypoints.craft.paper"
+    Book: "none" # Example: "betterwaypoints.craft.book"
+  #Permission required to be able to access "/bwp recipe" command.
+  Recipe:
+    Paper: "none" # Example: "betterwaypoints.recipe.paper"
+    Book: "none" # Example: "betterwaypoints.recipe.book"
+  Usage:
+    Paper: "none" # Example: "betterwaypoints.usage.paper"
+    Book: "none" # Example: "betterwaypoints.usage.book"
+  #Admin permission. Always required, even if "none".
+  Admin: "betterwaypoints.admin"
+
+Messages:
+  No-permission: "&cYou don't have permissions to execute this command."
+  You-are-in-combat: "&cYou cannot teleport while in combat!"
+  Only-main-hand-papers: "&cWaypoints Books can be used only in main hand!"
+  Only-main-hand-books: "&cWaypoints Books can be used only in main hand!"
+  Cannot-stacked-papers: "&cYou cannot use stacked waypoints papers.."
+  Cannot-stacked-books: "&cYou cannot use stacked waypoints books.."
+  Invalid-target: "&cTarget is not valid or is not online."
+  #Remember you can give from 1 to 64 items.
+  Invalid-amount: "&cAmount is not a valid number."
+  Sorting-disabled: "&cSorting is not allowed when editing Waypoint Books!"
+  Reloaded: "&aConfiguration and some checks have been reloaded. This doesn't include recipes updates."
+  Outdated-book: "&cThis book was created in an old version and cannot be migrated."
+  Give:
+    Paper:
+      Gave-target: "&aYou successfully gave {AMOUNT} Waypoint paper(s) to {TARGET}."
+      Received: "&6You received {AMOUNT} Waypoint paper(s)."
+      Received-extra: "&6You received {AMOUNT} Waypoint paper(s). Your inventory was full, some items were thrown in the floor."
+    Book:
+      Gave-target: "&aYou successfully gave {AMOUNT} Waypoints Book(s) to {TARGET}."
+      Received: "&6You received {AMOUNT} Waypoints Book(s)."
+      Received-extra: "&6You received {AMOUNT} Waypoints Book(s). Your inventory was full, some items were thrown in the floor."
+  Usage:
+    Paper:
+      No-permission: "&cYou don't have permission to use waypoint papers!" #Useful if you want to make recipe view an acquirable perk
+      Already-used: "&cThere is already a waypoint saved in this paper.."
+      Waypoint-saved: "&aWaypoint saved! You can now rename this paper using an anvil."
+      Disabled-world: "&cSaving waypoints in this world is not allowed!"
+      Cannot-stacked: "&cCannot use stacked waypoint papers!"
+      Corrupted-waypoint: "&cLooks like this waypoint is corrupted. I suggest you to remove it!"
+      Teleported-to-waypoint: "&a&lYou have been teleported to you waypoint!"
+      Teleported-to-waypoint-money: "&a&lYou have been teleported to you waypoint! You used ${COST}."
+      Teleported-to-waypoint-level: "&a&lYou have been teleported to you waypoint! You used {COST} level(s)."
+      Cannot-save-region: "&cYou cannot save waypoints in this region :("
+      Cannot-use-region: "&cYou cannot use waypoints in this region :("
+    Book:
+      No-permission: "&cYou don't have permission to use waypoints books!" #Useful if you want to make recipe view an acquirable perk
+      Disabled-world: "&cUsing waypoints books in this world is not allowed!"
+      Cannot-stacked: "&cCannot use stacked waypoints books!"
+      Brand-new: "&cThis book is brand new! Try to use it while sneaking.."
+      Unexpected-error-save: "&cThere was an unexpected error while saving waypoints for this book.."
+      Unexpected-error-open: "&cThere was an unexpected error while opening this book.."
+      Not-enough-money: "&cYou need ${COST} to teleport to this waypoint!"
+      Error-transaction: "&cThere was an error processing your payment. Please try again later!"
+      Not-enough-level: "&cYou need {COST} level(s) to teleport to this waypoint!"
+  Craft:
+    Paper:
+      No-permission: "&cYou cannot craft this item!" #Useful if you want to make paper crafting an acquirable perk
+    Book:
+      No-permission: "&cYou cannot craft this item!" #Useful if you want to make book crafting an acquirable perk
+  Recipe:
+    Recipe-disabled: "&cView for this recipe is not enabled or item is not craftable."
+    Paper:
+      Opened-other: "&aYou opened Waypoint Paper recipe for {TARGET}."
+      No-permission: "&cYou cannot view this recipe!" #Useful if you want to make recipe view an acquirable perk
+    Book:
+      Opened-other: "&aYou opened Waypoints Book recipe for {TARGET}."
+      No-permission: "&cYou cannot view this recipe!" #Useful if you want to make recipe view an acquirable perk
+  Open-book-title: "&8Available waypoints"
+  Edit-book-title: "&8Editing waypoints"
+  Paper-recipe:
+    Title: "&8Waypoint paper recipe"
+  Book-recipe:
+    Title: "&8Waypoint book recipe"
+  Help:
+    User:
+    - "&3 /betterwaypoints recipe (paper/book) &f- &bOpen recipe"
+    Admin:
+    - "&3 /betterwaypoints recipe (paper/book) <player> &f- &bOpen recipe for player"
+    - "&3 /betterwaypoints give (paper/book) <player> <amount> &f- &bGive item to player"
+    - "&3 /betterwaypoints reload &f- &bReload configuration"
+
+Options:
+  #Enable only if the developer asks you to do it.
+  Debug-mode: false
+  #Worlds in which saving waypoints using papers is not allowed.
+  Paper-disabled-worlds:
+    - "world_the_end"
+  #Worlds in which using books is not allowed.
+  Book-disabled-worlds:
+    - "world_the_end"
+  #If enabled, players with combat log enabled cannot open waypoint books.
+  #Plugin hooks automatically with the following combat log plugins:
+  #CombatLogX, PvPManager Lite, PvPManager, DeluxeCombat, KillPlus
+  Disable-book-on-combat: true
+  Teleport-cost:
+    #If enabled, teleporting using waypoints will have a cost.
+    Enabled: true
+    Ignore-on-creative: true
+    #If disabled, cost will take levels. YES, LEVELS, not experiences, LEVELS.
+    #If enabled and Vault is available and hooked, cost will take money from balance, otherwise it will take LEVELS.
+    #This is an experimental feature, please report bugs on discussion tab.
+    Vault: false
+    Cost: 1
+  WorldGuard:
+    Warning:
+    - "Default flag:"
+    - " This is the default behavior if the flag is not specified BUT you are inside in a WorldGuard region."
+    - "  true - Players can save/use waypoints."
+    - "  false - Players cannot save/use waypoints."
+    Default-flag-save: false
+    Default-flag-use: false
+  Hooks:
+    CombatLogX: true
+    DeluxeCombat: true
+    KillPlus: true
+    PvPManager: true
+    EternalCombat: true
+  Main:
+    Aliases:
+    - "bwp"
+    - "bwaypoints"
+    - "betterwp"
+
+Updates:
+  Check-updates: true
+  Notify-updates: true
+  Auto-update-configuration: true
+  Permission: "betterwaypoints.update"
+  Message: "&3[BetterWaypoints] &eA new update has been found! Download it here &c{LINK}"
